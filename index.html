@@ -4,39 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aula JS</title>
-
-    <link rel="stylesheet" href="/css/index.css">
-
+    <title>Javascript</title>
 </head>
 <body>
-    <p>Teste paragrafo</p>
-    <div id="div-1">
-
-        <form>
-            <div>
-                <label for="txtNomeCompleto">Nome Completo</label>
-                <input type="text" class="input-validar-vazio" id="txtNomeCompleto" maxlength="50">
-            </div>
-            <div>
-                <label for="txtPeriodo">Periodo</label>
-                <input type="number" class="input-validar-vazio" id="txtPeriodo" min="0" max="10">
-            </div>
-            <div>
-                <label for="txtNomeCurso">Curso</label>
-                <input type="text" class="input-validar-vazio" id="txtNomeCurso" maxlength="50">
-            </div>
-            <div>
-                <label for="chkMatriculaAtiva">Matricula Ativa?</label>
-                <input type="checkbox" id="chkMatriculaAtiva">
-            </div>
-
-            <input type="button" onclick="salvar()" value="Salvar">
-        </form>
-        
-    </div>
-
-
-    <script src="js/index.js"></script>
+    <h3>Aula JS v0</h3>
+    <p>Variáveis</p>
+    <p>Uma variável armazena um conteúdo durante o tempo de execução do sistema. Seu tempo de vida depende de como e onde foi declarada</p>
+    <p>Toda variável possui, nome, tipo e conteudo. No caso do javascript, uma linguagem 'fracamente tipada', onde o tipo é definido pelo conteúdo.</p>
+    <p>No javascript temos 3 formas de declarar uma variável:</p>
+    <ul>
+        <li>var: declara uma variável para receber qualquer conteúdo</li>
+        <li>let: declara uma variável para receber qualquer conteúdo, <b>LOCAL, ESCOPO DE BLOCO</b></li>
+        <li>const: declara uma variável para receber qualquer conteúdo, <b>SOMENTE LEITURA</b></li>
+    </ul>
+    <p>Conteúdo pode ser de 7 tipos:</p>
+    <ul>
+        <li>boolean: true ou fase</li>
+        <li>null: conteúdo nulo</li>
+        <li>undefined: conteúdo não definido</li>
+        <li>number: números inteiros ou com ponto flutuatne. Ex 123 ou 1.23</li>
+        <li>string: "texto"</li>
+        <li>object: qualquer coisa diferente do que temos acima</li>
+        <li>*symbol: cria uma instancia única (ecmascript 6)</li>
+    </ul>
+    <p>Declarando variáveis</p>
+    <p>var nomeCompleto = "Giancarlo"</p>
+    <p>var periodoCurso = 1</p>
+    <p>var matriculaAtiva = true</p>
 </body>
 </html>
