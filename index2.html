@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS 01</title>
+
+    <style>
+        #txtNome {
+            border: solid 1px blue;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>Aula JS</h3>
+    <!-- 
+        Comentario dentro do hmtl
+    -->
+
+        <div onclick="fnCliqueiNaDiv()">
+            minha div
+        </div>
+    <form>
+        <div>
+            <label for="txtNome">Nome Completo:</label>
+            <input type="text" id="txtNome">
+        </div>
+        <div>
+            <label for="txtCurso">Nome Curso:</label>
+            <input type="text" id="txtCurso">
+        </div>
+        <div>
+            <label for="txtPeriodo">Periodo:</label>
+            <input type="number" id="txtPeriodo" min="1" max="8">
+        </div>
+        <div>
+            <label for="chkMatriculaOk">Matricula OK:</label>
+            <input type="checkbox" id="chkMatriculaOk">
+        </div>
+
+        <input type="button" value="Salvar" onclick="fnAlteraValores()">
+    </form>
+
+    <script>
+        //comenta um linha
+        /*
+            cometa
+            um bloco
+            de linha
+        */
+        //declaracao nome = conteudo
+        /*
+            const
+            var
+            let
+        */
+        const mediaAprovacao = 7;
+        var aprovado = false;
+
+        var nota1Bin = 5.5;
+        var nota2Bin = 9.5;
+
+        var notaSemestre = (nota1Bin + nota2Bin) / 2;
+        var nomeAlunoCompleto = "Giancarlo Gonçalves";
+        var matriculaOk = true;
+        var periodo = 1;
+        var nomeCurso = "Engenharia de Software";
+
+        aprovado = notaSemestre >= mediaAprovacao;
+        /*
+        operadores
+        = atribui valor
+        != diferente
+        == compara
+        > maior que
+        < menor que
+        >= maior ou igual que
+        <= menor ou igual que
+        + adição
+        - subtração
+        * multiplicação
+        / divisão
+        % retorna o resto da divisão
+        
+        */
+
+        console.log("aprovado", aprovado, typeof (aprovado));
+        console.log("notaSemestre", notaSemestre, typeof (notaSemestre));
+        console.log("nomeAlunoCompleto", nomeAlunoCompleto, typeof (nomeAlunoCompleto));
+
+        document.querySelector("#txtNome").value = nomeAlunoCompleto;
+        document.querySelector("#chkMatriculaOk").checked = matriculaOk;
+
+        function fnAlteraValores() {
+            nomeAlunoCompleto = document.querySelector("#txtNome").value;
+            matriculaOk = document.querySelector("#chkMatriculaOk").checked;
+
+            console.log("nomeAlunoCompleto", nomeAlunoCompleto, typeof (nomeAlunoCompleto));
+            console.log("matriculaOk", matriculaOk, typeof (matriculaOk));
+
+        }
+
+        function fnCliqueiNaDiv(){
+            alert("cliquei na div");
+        }
+    </script>
+</body>
+
+</html>
