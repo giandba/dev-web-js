@@ -1,83 +1,101 @@
-//comenta linha
-/*comenta bloco de linhas
+function fnPaginaCarregada() {
+    console.log("Carregando pagina...");
 
-operadores
-= atribui valor
+    var nomeAluno = "Aluno 123";
+    var nomeCurso = "Curso 123";
+    var periodo = 1;
+    var matriculaOk = true;
 
-== compara valor
-=== compara valor e tipo
-> maior que
-< menor que
->= maior ou igual que
-<= menor ou igual que
+    document.querySelector("#txtNome").value = nomeAluno;
+    document.querySelector("#txtCurso").value = nomeCurso;
+    document.querySelector("#txtPeriodo").value = periodo;
+    document.querySelector("#chkMatriculaOk").checked = matriculaOk;
 
-* multiplica
-/ divide
-- subtrai
-+ soma
-% mod (retorna o resto da divisao)
 
-//laço de repetição
-for
-while
-foreach
-
-*/
-
-const mediaAprovacao = 7.0;
-
-let valores = [];
-
-for (let i = 0; i < 10; i++) {
-  valores[i] = "Teste "+ i;
+    console.log("Pagina carrega");
 }
 
-for (let i = 0; i < valores.length; i++) {
-  console.log( i, valores[i] );  
-}
+function fnSalvar() {
+    console.log("Salvando pagina...");
 
+    var nomeAluno = document.querySelector("#txtNome").value;
+    var nomeCurso = document.querySelector("#txtCurso").value;
+    var periodo = document.querySelector("#txtPeriodo").value;
+    var matriculaOk = document.querySelector("#chkMatriculaOk").checked;
 
-
-
-function salvar(){
-  console.log("Iniciando salvar");
-
-  const inputs = document.querySelectorAll(".input-validar-vazio");
-
-  for (let i = 0; i < inputs.length; i++) {
-    let labelCampo = document.querySelector("label[for='"+inputs[i].id+"']");
-    labelCampo.style="color:black;";
-
-    if(inputs[i].value == ""){
-      labelCampo.style="color:red;";
-
-      alert("Preencha o campo: "+ labelCampo.innerHTML);
-      
-      inputs[i].focus();
-      return;
+    if (nomeAluno == "") {
+        alert("Preencha nome do aluno");
+        return;
+    }
+    if (nomeCurso == "") {
+        alert("Preencha nome do curso");
+        return;
+    }
+    if (periodo <= 0 || periodo > 9) {
+        alert("Periodo inválido");
+        return;
     }
 
-  }
+    console.log(nomeAluno);
+    console.log(nomeCurso);
+    console.log(periodo);
+    console.log(matriculaOk);
 
-  return;
-  
-  let nomeCompleto = document.querySelector("#txtNomeCompleto").value;
-  let periodoCurso = Number(document.querySelector("#txtPeriodo").value);
-  let matriculaAtiva = document.querySelector("#chkMatriculaAtiva").checked;
-  let nomeCurso = document.querySelector("#txtNomeCurso").value;
-  
-  periodoCurso++;
-  console.log("tipo nomeCompleto", typeof(nomeCompleto));
-  console.log("tipo periodoCurso", typeof(periodoCurso));
-  console.log("tipo matriculaAtiva", typeof(matriculaAtiva));
-  console.log("tipo nomeCurso", typeof(nomeCurso));
-  
-  console.log("Nome completo: ", nomeCompleto);
-  console.log("Periodo curso: ", periodoCurso);
-  console.log("Matricula ativa: ", matriculaAtiva);
-  console.log("Nome curso: ", nomeCurso);
+    alert("Salvo com sucesso");
+}
 
-  console.log("Salvo com sucesso");
+function fnArray() {
+    var diasSemana = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sab"];
+
+    // console.log(diasSemana[0]);//dom
+    // console.log(diasSemana[1]);//seg
+    // console.log(diasSemana[2]);
+    // console.log(diasSemana[3]);
+    // console.log(diasSemana[4]);
+    // console.log(diasSemana[5]);
+    // console.log(diasSemana[6]);
+    console.log(diasSemana.length)
+
+    //LAÇOS DE REPETIÇÃO
+
+    //WHILE - ENQUANTO INDICE FOR < 7 FAÇA...
+    var indexW = 0;
+    while (indexW < diasSemana.length) {
+        console.log("while:", diasSemana[indexW]);
+        indexW++;
+    }
+
+    //DO-WHILE
+    var indexDw = 0;
+    do {
+        console.log("do-while:", diasSemana[indexDw]);
+        indexDw++;
+    } while (indexDw < diasSemana.length);
+
+    //FOR - PARA(INICIO; CONDICAO; INCREMENTO)
+    for (var i = 0; i < diasSemana.length; i++) {
+        console.log("FOR:", diasSemana[i]);
+    }
+
+    //FOREACH
+    diasSemana.forEach((x) => {
+        console.log("forEach", x);
+    });
+
+    let diasAno = [];
+    let dia;
+    for (let idx = 0; idx < 365; idx++) {
+        dia = idx + 1;
+        diasAno[idx] = dia;
+    }
+
+    diasAno.forEach((x) => {
+        console.log("dia do Ano: ", x);
+    });
+
+    for (let idx = 0; idx < diasAno.length; idx++) {
+        console.log("dia do Ano: ", diasAno[idx]);
+    }
 }
 
 
